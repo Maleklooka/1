@@ -1,0 +1,27 @@
+ALGORITHM checkpoint1
+VAR
+    L:Character
+    K:Character
+    W:Character
+    V:Character
+BEGIN
+    Write(L):
+    Read(L):
+    WHILE (L[-1]!=.) DO
+        Write(L)
+    END_WHILE
+    K=0
+    FOR i in range (len(L)) DO
+        K=K+1
+    END_FOR
+    W=1
+    WHILE (L.find(" ")) DO
+        W=W+1
+    END_WHILE
+    V=0
+    FOR i in range (len(L)) DO
+        IF ("OIYEAU".find(uppercase(L[i]))) THEN
+            V=V+1
+        END_IF
+    END_FOR
+END
