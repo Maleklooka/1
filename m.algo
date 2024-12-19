@@ -1,27 +1,35 @@
 ALGORITHM checkpoint1
 VAR
-    L:Character
-    K:Character
-    W:Character
-    V:Character
+    P:STRING;
+    i:INTEGER;
+    n:INTEGER;
+    w:INTEGER;
+    v:INTEGER
 BEGIN
-    Write(L):
-    Read(L):
-    WHILE (L[-1]!=.) DO
-        Write(L)
+    REPEAT
+        Write("Write a phrase that end with a point:")
+        Read(P)
+        IF (P[-1]!=".") THEN
+            Write("Your phrase did not end with a point please rewrite your phrase and end with a point:")
+        END_IF
+    UNTIL (P[-1] != ".")
+    i := 0
+    WHILE (P[i] != ".") DO
+        i := i + 1
     END_WHILE
-    K=0
-    FOR i in range (len(L)) DO
-        K=K+1
-    END_FOR
-    W=1
-    WHILE (L.find(" ")) DO
-        W=W+1
-    END_WHILE
-    V=0
-    FOR i in range (len(L)) DO
-        IF ("OIYEAU".find(uppercase(L[i]))) THEN
-            V=V+1
+    n:=i+1
+    FOR i FROM 0 TO n DO
+        IF (P[i] = " ") THEN
+            w := w + 1
         END_IF
     END_FOR
+    FOR i FROM 0 TO n DO
+        IF (L[i] IN ("o", "i", "y", "e", "a", "u", "O", "I", "Y", "E", "A", "U")) THEN
+            v := v + 1
+        END_IF
+    END_FOR
+    Write("Your phrase is: ", P)
+    Write("The number of characters in your phrase is: ", i)
+    Write("The number of words in your phrase is: ", w)
+    Write("The number of vowels in the phrase is: ", v)
 END
